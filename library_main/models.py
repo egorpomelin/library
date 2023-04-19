@@ -1,47 +1,62 @@
 from django.db import models
+#from django.contrib.auth.models import AbstractUser
+
 
 class Author(models.Model):
-    image = models.ImageField(verbose_name='Изображение')
-    name = models.CharField(verbose_name='ФИО', max_length=50)
+    image = models.ImageField(verbose_name='РР·РѕР±СЂР°Р¶РµРЅРёРµ')
+    name = models.CharField(verbose_name='Р¤РРћ', max_length=50)
 
     class Meta:
-        verbose_name = "Автор"
-        verbose_name_plural = "Авторы"
+        verbose_name = "РђРІС‚РѕСЂ"
+        verbose_name_plural = "РђРІС‚РѕСЂС‹"
 
     def __str__(self):
         return self.name
 
 class Category(models.Model):
-    name = models.CharField(verbose_name='Категория')
+    name = models.CharField(verbose_name='РќР°Р·РІР°РЅРёРµ', max_length=50)
 
     class Meta:
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
+        verbose_name = "РљР°С‚РµРіРѕСЂРёСЏ"
+        verbose_name_plural = "РљР°С‚РµРіРѕСЂРёРё"
 
     def __str__(self):
         return self.name
 
 class Genre(models.Model):
-    name = models.CharField(verbose_name='Название жанра')
-    category = models.ForeignKey(Category, verbose_name='Категория жанра', on_delete=models.CASCADE)
+    name = models.CharField(verbose_name='РќР°Р·РІР°РЅРёРµ Р¶Р°РЅСЂР°', max_length=50)
+    category = models.ForeignKey(Category, verbose_name='РљР°С‚РµРіРѕСЂРёСЏ', on_delete=models.CASCADE)
 
     class Meta:
-        verbose_name = "Жанр"
-        verbose_name_plural = "Жанры"
+        verbose_name = "Р–Р°РЅСЂ"
+        verbose_name_plural = "Р–Р°РЅСЂС‹"
 
     def __str__(self):
         return self.name
 
 class Book(models.Model):
-    name = models.CharField(verbose_name='Название книги', max_length=50)
-    author = models.ForeignKey(Author, verbose_name='Автор книги', on_delete=models.CASCADE)
-    genre = models.ForeignKey(Genre, verbose_name='Жанр книги', on_delete=models.CASCADE)
-    description = models.TextField(verbose_name='Описание книги')
-    image = models.ImageField(verbose_name='Обложка книги')
+    name = models.CharField(verbose_name='РќР°Р·РІР°РЅРёРµ РєРЅРёРіРё', max_length=50)
+    author = models.ForeignKey(Author, verbose_name='РђРІС‚РѕСЂ РєРЅРёРіРё', on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, verbose_name='Р–Р°РЅСЂ РєРЅРёРіРё', on_delete=models.CASCADE)
+    description = models.TextField(verbose_name='РћРїРёСЃР°РЅРёРµ РєРЅРёРіРё')
+    image = models.ImageField(verbose_name='РћР±Р»РѕР¶РєР° РєРЅРёРіРё')
 
     class Meta:
-        verbose_name = "Книга"
-        verbose_name_plural = "Книги"
+        verbose_name = "РљРЅРёРіР°"
+        verbose_name_plural = "РљРЅРёРіРё"
+
+    def __str__(self):
+        return self.name
+
+class User(models.Model):
+    image = models.ImageField(verbose_name="РђРІР°С‚Р°СЂРєР°")
+    name = models.CharField(verbose_name='РРјСЏ', max_length=50)
+    date = models.DateField(verbose_name='Р”Р°С‚Р° СЂРµРіРёСЃС‚СЂР°С†РёРё', auto_now_add=True)
+    date_of_birth = models.DateField(verbose_name='Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ')
+
+    class Meta:
+        verbose_name = "РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ"
+        verbose_name_plural = "РџРѕР»СЊР·РѕРІР°С‚РµР»Рё"
 
     def __str__(self):
         return self.name
