@@ -40,6 +40,13 @@ class Book(models.Model):
     genre = models.ForeignKey(Genre, verbose_name='Жанр книги', on_delete=models.CASCADE)
     description = models.TextField(verbose_name='Описание книги')
     image = models.ImageField(verbose_name='Обложка книги')
+    linkLitress = models.TextField(verbose_name='Ссылка на покупку', null=True, blank=True)
+    linkDowload = models.TextField(verbose_name='Ссылка на загрузку фрагмента', null=True, blank=True)
+    linkOnline = models.TextField(verbose_name='Ссылка на онлайн фрагмент', null=True, blank=True)
+    ageRestriction = models.IntegerField(verbose_name='Возрастное ограничение', max_length=2)
+    date_of_writing = models.DateField(verbose_name='Дата написания')
+    value = models.IntegerField(verbose_name='Количество страниц')
+    isbn = models.CharField(verbose_name='Международный номер книги', max_length=200)
 
     class Meta:
         verbose_name = "Книга"
@@ -60,3 +67,27 @@ class User(models.Model):
 
     def __str__(self):
         return self.name
+
+class News(models.Model):
+    heading = models.CharField(verbose_name='Заголовок', max_length=100)
+    description = models.TextField(verbose_name='Описание')
+    image = models.ImageField(verbose_name='Изображение',  null=True, blank=True)
+    source = models.CharField(verbose_name='Источник Новости', max_length=100)
+
+    class Meta:
+        verbose_name = "Новость"
+        verbose_name_plural = "новости"
+
+    def __str__(self):
+        return self.heading
+
+class Quotes(models.Model):
+    books = models.ForeignKey(Book, verbose_name='Книга', on_delete=models.CASCADE)
+    quotes = models.TextField(verbose_name='Цитата')
+
+    class Meta:
+        verbose_name = "Цитата"
+        verbose_name_plural = "Цитаты"
+
+    def __str__(self):
+        return self.bookss
