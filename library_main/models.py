@@ -43,7 +43,7 @@ class Book(models.Model):
     linkLitress = models.TextField(verbose_name='Ссылка на покупку', null=True, blank=True)
     linkDowload = models.TextField(verbose_name='Ссылка на загрузку фрагмента', null=True, blank=True)
     linkOnline = models.TextField(verbose_name='Ссылка на онлайн фрагмент', null=True, blank=True)
-    ageRestriction = models.IntegerField(verbose_name='Возрастное ограничение', max_length=2)
+    ageRestriction = models.IntegerField(verbose_name='Возрастное ограничение')
     date_of_writing = models.DateField(verbose_name='Дата написания')
     value = models.IntegerField(verbose_name='Количество страниц')
     isbn = models.CharField(verbose_name='Международный номер книги', max_length=200)
@@ -55,24 +55,25 @@ class Book(models.Model):
     def __str__(self):
         return self.name
 
-class User(models.Model):
-    image = models.ImageField(verbose_name="Аватарка")
-    name = models.CharField(verbose_name='Имя', max_length=50)
-    date = models.DateField(verbose_name='Дата регистрации', auto_now_add=True)
-    date_of_birth = models.DateField(verbose_name='Дата рождения')
+#class User(models.Model):
+    #image = models.ImageField(verbose_name="Аватарка")
+    #name = models.CharField(verbose_name='Имя', max_length=50)
+    #date = models.DateField(verbose_name='Дата регистрации', auto_now_add=True)
+    #date_of_birth = models.DateField(verbose_name='Дата рождения')
 
-    class Meta:
-        verbose_name = "Пользователь"
-        verbose_name_plural = "Пользователи"
+    #class Meta:
+        #verbose_name = "Пользователь"
+        #verbose_name_plural = "Пользователи"
 
-    def __str__(self):
-        return self.name
+    #def __str__(self):
+        #return self.name
 
 class News(models.Model):
     heading = models.CharField(verbose_name='Заголовок', max_length=100)
     description = models.TextField(verbose_name='Описание')
     image = models.ImageField(verbose_name='Изображение',  null=True, blank=True)
     source = models.CharField(verbose_name='Источник Новости', max_length=100)
+    pudlicachia_date = models.DateField(verbose_name='Дата публикации', auto_now_add=True)
 
     class Meta:
         verbose_name = "Новость"
