@@ -1,4 +1,4 @@
-from models import Category, Genre
+from library_main.models import Category, Genre
 
 
 def category(request):

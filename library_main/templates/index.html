@@ -1,39 +1,8 @@
-{% extends 'base.html' %} 
-{% block title %}<title>Главная страница</title>{% endblock %}
-{% block body %}
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+{% block meta %}
+<meta content="" name="description">
+<meta content="" name="keywords">
+    {% endblock %}
+{% block body %}{% endblock %}
 
-<style>
-  .carousel_one{
-    max-width: 600px;
-    max-height: 380px;
-    margin-top: 0%;
-}
-
-</style>
-<div>
-  <div id="carouselExampleCaptions" class="carousel slide carousel_one">
-    
-    {% for i in promotion %}
-    <div class="carousel-inner">
-      <div class="carousel-item active carousel_one">
-        <img src="{{ i.image.url }}" class="d-block w-100 " alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>{{ i.name }}</h5>
-          <p>{{ i.description }}</p>
-        </div>
-      </div>
-    {% endfor %}
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Назад</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Вперед</span>
-    </button>
-  </div>
-</div>
-
-
-
-{% endblock %}
