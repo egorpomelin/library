@@ -1,7 +1,8 @@
-from library_main.models import Category, Genre
+from library_main.models import Category, Genre, News
 
 
 def category(request):
     category = Category.objects.all().order_by('name')
     genre = Genre.objects.all()
-    return {'category' : category, 'genre' : genre}
+    news = News.objects.all().order_by('-pudlicachia_date')
+    return {'category' : category, 'genre' : genre, 'news' : news}
