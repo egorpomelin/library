@@ -1,5 +1,5 @@
 from random import randint
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from library_main.models import Author, Category, Genre, Book, News, Quotes
 
 def index(request):
@@ -16,3 +16,15 @@ def index(request):
     print(book, now)
     context = {'now' : now, 'book' : book,}
     return render(request, 'index.html', context=context)
+
+def Genre_views(request, id):
+    genre = get_object_or_404(Genre, pk=id)
+    book = Book.objects.filter(genre__exact=genre).order_by('-date_of_writing')
+    context = {'genre1' : genre, 'book' : book}
+    return render(request, 'genre_book.html', context=context)
+
+def Single_book_views(request, id):
+    genre = get_object_or_404(Genre, pk=id)
+    book = Book.objects.filter(genre__exact=genre).order_by('-date_of_writing')
+    context = {'genre1' : genre, 'book' : book}
+    return render(request, 'single_book.html', context=context)

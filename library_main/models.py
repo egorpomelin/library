@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 #from django.contrib.auth.models import AbstractUser
 
 
@@ -27,9 +28,13 @@ class Genre(models.Model):
     name = models.CharField(verbose_name='Название жанра', max_length=50)
     category = models.ForeignKey(Category, verbose_name='Категория', on_delete=models.CASCADE)
 
+    def get_absolute_url(self):
+        return reverse('genre', args=[self.id])
+
     class Meta:
         verbose_name = "Жанр"
         verbose_name_plural = "Жанры"
+
 
     def __str__(self):
         return self.name
@@ -47,6 +52,9 @@ class Book(models.Model):
     date_of_writing = models.DateField(verbose_name='Дата написания')
     value = models.IntegerField(verbose_name='Количество страниц')
     isbn = models.CharField(verbose_name='Международный номер книги', max_length=200)
+
+    def get_absolute_url(self):
+        return reverse('single_book', args=[self.id])
 
     class Meta:
         verbose_name = "Книга"

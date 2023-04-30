@@ -47,12 +47,12 @@
             <div class="col-md-9">
 
                 <div class="d-lg-flex post-entry-2">
-                    <a href="single-post.html" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+                    <a href="{{ now.1.get_absolute_url }}" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
                         <img src="{{ MEDIA_URL }}{{ now.0.image.url }}" alt="" class="img-fluid">
                     </a>
                     <div>
                         <div class="post-meta"><span class="date">Дата написания</span> <span class="mx-1">&bullet;</span> <span>{{ now.0.date_of_writing }}</span></div>
-                        <h3><a href="single-post.html">{{ now.0.name }}</a></h3>
+                        <h3><a href="{{ now.0.get_absolute_url }}">{{ now.0.name }}</a></h3>
                         <p>{{ now.0.description }}</p>
                         <div class="d-flex align-items-center author">
                             <div class="photo"><img src="{{ MEDIA_URL }}{{ now.0.author.image.url }}" alt="" class="img-fluid"></div>
@@ -66,9 +66,9 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="post-entry-1 border-bottom">
-                            <a href="single-post.html"><img src="{{ MEDIA_URL }}{{ now.1.image.url }}" alt="" class="img-fluid"></a>
+                            <a href="{{ now.1.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ now.1.image.url }}" alt="" class="img-fluid"></a>
                             <div class="post-meta"><span class="date">Дата написания</span> <span class="mx-1">&bullet;</span> <span>{{ now.1.date_of_writing }}</span></div>
-                            <h2 class="mb-2"><a href="single-post.html">{{ now.1.name }}</a></h2>
+                            <h2 class="mb-2"><a href="{{ now.1.get_absolute_url }}">{{ now.1.name }}</a></h2>
                             <div class="d-flex align-items-center author">
                                 <div class="photo"><img src="{{ MEDIA_URL }}{{ now.1.author.image.url }}" alt="" class="img-fluid"></div>
                                 <div class="name">
@@ -81,9 +81,9 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="post-entry-1">
-                            <a href="single-post.html"><img src="{{ MEDIA_URL }}{{ now.2.image.url }}" alt="" class="img-fluid"></a>
+                            <a href="{{ now.2.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ now.2.image.url }}" alt="" class="img-fluid"></a>
                             <div class="post-meta"><span class="date">Дата написания</span> <span class="mx-1">&bullet;</span> <span>{{ now.2.date_of_writing }}</span></div>
-                            <h2 class="mb-2"><a href="single-post.html">{{ now.2.name }}</a></h2>
+                            <h2 class="mb-2"><a href="{{ now.2.get_absolute_url }}">{{ now.2.name }}</a></h2>
                             <div class="d-flex align-items-center author">
                                 <div class="photo"><img src="{{ MEDIA_URL }}{{ now.1.author.image.url }}" alt="" class="img-fluid"></div>
                                 <div class="name">
@@ -118,12 +118,12 @@
             <div class="col-md-9 order-md-2">
 
                 <div class="d-lg-flex post-entry-2">
-                    <a href="single-post.html" class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
+                    <a href="{{ book.0.get_absolute_url }}" class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
                         <img src="{{ MEDIA_URL }}{{ book.0.image.url }}" alt="" class="img-fluid">
                     </a>
                     <div>
                         <div class="post-meta"><span class="date">Дата написания</span> <span class="mx-1">&bullet;</span> <span>{{ book.0.date_of_writing }}</span></div>
-                        <h3><a href="single-post.html">{{ book.0.name }}</a></h3>
+                        <h3><a href="{{ book.0.get_absolute_url }}">{{ book.0.name }}</a></h3>
                         <p>{{ book.0.description }}</p>
                         <div class="d-flex align-items-center author">
                             <div class="photo"><img src="{{ MEDIA_URL }}{{ book.0.author.image.url }}" alt="" class="img-fluid"></div>
@@ -137,9 +137,9 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="post-entry-1 border-bottom">
-                            <a href="single-post.html"><img src="{{ MEDIA_URL }}{{ book.1.image.url }}" alt="" class="img-fluid"></a>
+                            <a href="{{ book.1.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ book.1.image.url }}" alt="" class="img-fluid"></a>
                             <div class="post-meta"><span class="date">Дата написания</span> <span class="mx-1">&bullet;</span> <span>{{ book.1.date_of_writing }}</span></div>
-                            <h2 class="mb-2"><a href="single-post.html">{{ book.1.name }}</a></h2>
+                            <h2 class="mb-2"><a href="{{ book.1.get_absolute_url }}">{{ book.1.name }}</a></h2>
                             <div class="d-flex align-items-center author">
                                 <div class="photo"><img src="{{ MEDIA_URL }}{{ book.1.author.image.url }}" alt="" class="img-fluid"></div>
                                 <div class="name">
@@ -151,9 +151,9 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="post-entry-1">
-                            <a href="single-post.html"><img src="{{ MEDIA_URL }}{{ book.2.image.url }}" alt="" class="img-fluid"></a>
+                            <a href="{{ book.2.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ book.2.image.url }}" alt="" class="img-fluid"></a>
                             <div class="post-meta"><span class="date">Дата написания</span> <span class="mx-1">&bullet;</span> <span>{{ book.2.date_of_writing }}</span></div>
-                            <h2 class="mb-2"><a href="single-post.html">{{ book.2.name }}</a></h2>
+                            <h2 class="mb-2"><a href="{{ book.2.get_absolute_url }}">{{ book.2.name }}</a></h2>
                             <div class="d-flex align-items-center author">
                                 <div class="photo"><img src="{{ MEDIA_URL }}{{ book.2.author.image.url }}" alt="" class="img-fluid"></div>
                                 <div class="name">
