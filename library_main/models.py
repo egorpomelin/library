@@ -99,4 +99,19 @@ class Quotes(models.Model):
         verbose_name_plural = "Цитаты"
 
     def __str__(self):
-        return self.bookss
+        return self.books.name
+
+
+class Contacts(models.Model):
+
+    name = models.CharField(verbose_name='Имя', max_length=50)
+    email = models.EmailField()
+    namber = models.IntegerField(verbose_name='Номер телефона')
+    adress = models.TextField(verbose_name='Адрес')
+
+    class Meta:
+        verbose_name = "Контакт"
+        verbose_name_plural = "Контакты"
+
+    def __str__(self):
+        return self.name

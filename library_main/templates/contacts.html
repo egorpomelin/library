@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Контакты{% endblock %}
+{% block meta %}
+<meta content="" name="description">
+<meta content="" name="keywords">
+{% endblock %}
+{% block body %}
+<section id="contact" class="contact mb-5">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h1 class="page-title">Наши контакты</h1>
+            </div>
+        </div>
+
+        <div class="row gy-4">
+
+            <div class="col-md-4">
+                <div class="info-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>Адрес</h3>
+                    <address>{{ contact.adress }}</address>
+                </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-4">
+                <div class="info-item info-item-borders">
+                    <i class="bi bi-phone"></i>
+                    <h3>Номер телефона</h3>
+                    <p><a href="tel:{{ contact.namber }}">{{ contact.namber }}</a></p>
+                </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-md-4">
+                <div class="info-item">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+                </div>
+            </div><!-- End Info Item -->
+
+        </div>
+    </div>
+</section>
+{% endblock %}
